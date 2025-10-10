@@ -4,9 +4,9 @@ def reverseArray(a):
         a[left], a[right] = a[right], a[left]
         left += 1
         right -= 1
-    return a
 
 
 if __name__ == "__main__":
     a = list(map(int, input().split()))
-    print(*reverseArray(a))
+    reverseArray(a)
+    print(*a)
