@@ -7,10 +7,10 @@ def twosum(a, target):
             j -= 1
         else:
             return a[i], a[j]
-    return 'Таких чисел нет в массиве'
+    return "Таких чисел нет в массиве"
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     a = list(map(int, input().split()))
     target = int(input())
     print(twosum(a, target))
-
