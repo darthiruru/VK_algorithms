@@ -1,4 +1,4 @@
-def reverseArray(a, start, end):
+def reverse_array(a, start, end):
     left, right = start, end
     while left < right:
         a[left], a[right] = a[right], a[left]
@@ -6,17 +6,17 @@ def reverseArray(a, start, end):
         right -= 1
 
 
-def rotateArray(a, k):
+def rotate_array(a, k):
     if not a:
         return
     k %= len(a)
-    reverseArray(a, 0, len(a) - 1)
-    reverseArray(a, 0, k - 1)
-    reverseArray(a, k, len(a) - 1)
+    reverse_array(a, 0, len(a) - 1)
+    reverse_array(a, 0, k - 1)
+    reverse_array(a, k, len(a) - 1)
 
 
 if __name__ == "__main__":
     a = list(map(int, input().split()))
     k = int(input())
-    rotateArray(a, k)
+    rotate_array(a, k)
     print(*a)
