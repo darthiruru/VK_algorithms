@@ -1,4 +1,4 @@
-def reverseArray(a):
+def reverse_array(a):
     left, right = 0, len(a) - 1
     while left < right:
         a[left], a[right] = a[right], a[left]
@@ -8,5 +8,5 @@ def reverseArray(a):
 
 if __name__ == "__main__":
     a = list(map(int, input().split()))
-    reverseArray(a)
+    reverse_array(a)
     print(*a)
