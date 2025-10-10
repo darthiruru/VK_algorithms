@@ -1,4 +1,4 @@
-def twosum(a, target):
+def two_sum(a, target):
     i, j = 0, len(a) - 1
     while i < j:
         if a[i] + a[j] > target:
@@ -13,4 +13,4 @@ def twosum(a, target):
 if __name__ == "__main__":
     a = list(map(int, input().split()))
     target = int(input())
-    print(twosum(a, target))
+    print(two_sum(a, target))
