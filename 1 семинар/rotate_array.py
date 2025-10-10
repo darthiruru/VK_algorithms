@@ -1,22 +1,22 @@
-def reverseArray(a):
-    res = a[::]
-    left, right = 0, len(a) - 1
+def reverseArray(a, start, end):
+    left, right = start, end
     while left < right:
-        res[left], res[right] = res[right], res[left]
+        a[left], a[right] = a[right], a[left]
         left += 1
         right -= 1
-    return res
 
 
 def rotateArray(a, k):
-    k = k % len(a)
-    res = reverseArray(a)
-    res[:k] = reverseArray(res[:k])
-    res[k:] = reverseArray(res[k:])
-    return res
+    if not a:
+        return
+    k %= len(a)
+    reverseArray(a, 0, len(a) - 1)
+    reverseArray(a, 0, k - 1)
+    reverseArray(a, k, len(a) - 1)
 
 
 if __name__ == "__main__":
     a = list(map(int, input().split()))
     k = int(input())
-    print(*rotateArray(a, k))
+    rotateArray(a, k)
+    print(*a)
