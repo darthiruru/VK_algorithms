@@ -26,8 +26,22 @@ def iter_merge_sorted_arrays(a, b):
     yield from b[j:]
 
 
+def merge_sorted_arrays_inplace(a, b):
+    i, j = len(a) - 1, len(b) - 1
+    a.extend([0] * len(b))
+    for k in range(len(a) - 1, -1, -1):
+        if a[i] > b[j] and i > -1 or j == -1:
+            a[k] = a[i]
+            i -= 1
+        else:
+            a[k] = b[j]
+            j -= 1
+
+
 if __name__ == "__main__":
     a = list(map(int, input().split()))
     b = list(map(int, input().split()))
     print(*merge_sorted_arrays(a, b))
     print(*iter_merge_sorted_arrays(a, b))
+    merge_sorted_arrays_inplace(a, b)
+    print(*a)
