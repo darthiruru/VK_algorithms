@@ -1,21 +1,21 @@
 class Node:
-    def __init__(self, value):
+    def __init__(self, value: int) -> None:
         self.next__ = None
         self.value__ = value
 
-    def set_value(self, value):
+    def set_value(self, value: int) -> None:
         self.value__ = value
 
-    def get_value(self):
+    def get_value(self) -> int:
         return self.value__
     
-    def set_next(self, next):
+    def set_next(self, next: Node | None) -> None:
         self.next__ = next
 
-    def get_next(self):
+    def get_next(self) -> Node | None:
         return self.next__
 
-def has_cycle(head):
+def has_cycle(head: Node | None) -> bool:
     if head is None or head.get_next() is None:
         return False
     slow = head
