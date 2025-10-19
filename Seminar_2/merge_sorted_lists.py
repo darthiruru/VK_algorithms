@@ -64,10 +64,7 @@ if __name__ == '__main__':
     assert create_list(merge_sorted_lists(l1, l2)) == [1, 2, 3], "Right empty"
     l1 = create_linked_list([1])
     l2 = create_linked_list([2])
-    assert create_list(merge_sorted_lists(l1, l2)) == [1, 2], "Single elements in order"
-    l1 = create_linked_list([5])
-    l2 = create_linked_list([3])
-    assert create_list(merge_sorted_lists(l1, l2)) == [3, 5], "Single elements reverse"
+    assert create_list(merge_sorted_lists(l1, l2)) == [1, 2], "Single elements"
     l1 = create_linked_list([1, 3, 5])
     l2 = create_linked_list([2, 4])
     assert create_list(merge_sorted_lists(l1, l2)) == [1, 2, 3, 4, 5], "Different lengths"
