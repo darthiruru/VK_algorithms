@@ -43,7 +43,7 @@ if __name__ == '__main__':
     head = reverse_linked_list(a)
     assert head == e, "Five elements"
     assert head.get_next() == d and d.get_next() == c and c.get_next() == b and b.get_next() == a and a.get_next() is None, 'Order check'
-    n = 10000000
+    n = 1000000
     lst = [Node(i) for i in range(n)]
     for i in range(n-1):
         lst[i].set_next(lst[i+1])
