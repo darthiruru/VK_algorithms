@@ -49,7 +49,8 @@ if __name__ == '__main__':
         lst[i].set_next(lst[i+1])
     head = reverse_linked_list(lst[0])
     assert head == lst[-1], f"{n} elements"
-    for i in range(n-1):
-        assert head.get_next() == lst[n-i-2], f"Order check, {i} elements"
+    for i in range(n-1, -1 , -1):
+        assert head.get_value() == i, f"Order check, {i} elements"
         head = head.get_next()
+    assert head is None, "No cycle"
     print('OK!')
