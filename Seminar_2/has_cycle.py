@@ -29,7 +29,7 @@ def has_cycle(head):
 
 if __name__ == '__main__':
     a = None
-    assert has_cycle(a) == False, 'No elements, cycle found'
+    assert has_cycle(a) == False, 'Empty list'
     a = Node(1)
     assert has_cycle(a) == False, 'One element, cycle found'
     a.set_next(a)
