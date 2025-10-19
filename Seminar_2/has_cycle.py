@@ -1,3 +1,5 @@
+import random
+
 class Node:
     def __init__(self, value: int) -> None:
         self.next__ = None
@@ -50,4 +52,11 @@ if __name__ == '__main__':
     d.set_next(e)
     e.set_next(c)
     assert has_cycle(a) == True, 'Cycle not found'
+    n = 1000000
+    lst = [Node(i) for i in range(n)]
+    for i in range(n-1):
+        lst[i].set_next(lst[i+1])
+    cycle = random.randint(0, n-1)
+    lst[-1].set_next(lst[cycle])
+    assert has_cycle(lst[0]) == True, 'Cycle not found'
     print('OK!')
