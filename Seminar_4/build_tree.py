@@ -4,7 +4,7 @@ class TreeNode:
         self.left = left
         self.right = right
 
-def build_tree(arr, i=0):
+def build_tree(arr: list[int], i: int=0) -> TreeNode:
     if i >= len(arr):
         return None
     root = TreeNode(arr[i])
