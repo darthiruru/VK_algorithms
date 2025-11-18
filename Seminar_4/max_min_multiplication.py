@@ -1,4 +1,4 @@
-def max_min_multiplication(data):
+def max_min_multiplication(data: lis[int]) -> int:
     if len(data) < 3:
         return -1
     i = 1
