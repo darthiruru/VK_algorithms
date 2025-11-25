@@ -1,3 +1,5 @@
+from collections import deque
+
 def is_max_heap(arr: list[int]) -> bool:
     n = len(arr)
     for i in range((n - 2) // 2 + 1):
@@ -13,10 +15,10 @@ def is_max_heap_bfs(arr: list[int]) -> bool:
     n = len(arr)
     if n <= 1:
         return True
-    queue = []
+    queue = deque()
     queue.append(0)
     while (len(queue) > 0):
-        i = queue.pop(0)
+        i = queue.popleft()
         left = 2 * i + 1
         right = 2 * i + 2
         if left < n:
