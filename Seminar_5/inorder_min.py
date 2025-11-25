@@ -1,11 +1,11 @@
 class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
+    def __init__(self, val: int=0, left: TreeNode=None, right: TreeNode=None) -> None:
         self.val = val
         self.left = left
         self.right = right
 
 
-def inorder_min_iterative(root: TreeNode, k: int):
+def inorder_min_iterative(root: TreeNode, k: int) -> int:
     stack = []
     current = root
     counter = 0
@@ -20,7 +20,7 @@ def inorder_min_iterative(root: TreeNode, k: int):
         current = current.right
     return None
 
-def inorder_min_recursive(node: TreeNode, k: int, counter: list[int]):
+def inorder_min_recursive(node: TreeNode, k: int, counter: list[int]) -> int:
     if node is None:
         return None
     left_result = inorder_min_recursive(node.left, k, counter)
@@ -31,7 +31,7 @@ def inorder_min_recursive(node: TreeNode, k: int, counter: list[int]):
         return node.val
     return inorder_min_recursive(node.right, k, counter)
 
-def inorder_min(node: TreeNode, k: int):
+def inorder_min(node: TreeNode, k: int) -> int:
     return inorder_min_recursive(node, k, [0])
 
 
