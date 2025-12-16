@@ -1,6 +1,6 @@
 import heapq
 
-def dijkstra(graph, start):
+def dijkstra(graph: dict[int: list[int]], start: int) -> dict[int: int]:
     distances = {v: float('inf') for v in graph}
     distances[start] = 0
     priority_queue = [(0, start)]
@@ -17,12 +17,12 @@ def dijkstra(graph, start):
 
 
 if __name__ == '__main__':
-    graph = {'A': {'B': 1, 'C': 4}, 'B': {'C': 2, 'D': 5}, 'C': {'D': 1}, 'D': {}}
-    dist = dijkstra(graph, 'A')
-    assert dist['A'] == 0
-    assert dist['B'] == 1
-    assert dist['C'] == 3
-    assert dist['D'] == 4
+    graph = {0: {1: 1, 2: 4}, 1: {2: 2, 3: 5}, 2: {3: 1}, 3: {}}
+    dist = dijkstra(graph, 0)
+    assert dist[0] == 0
+    assert dist[1] == 1
+    assert dist[2] == 3
+    assert dist[3] == 4
     graph = {0: {1: 2}, 1: {}, 2: {}}
     dist = dijkstra(graph, 0)
     assert dist[0] == 0
